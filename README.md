@@ -1,6 +1,6 @@
 # KELIR SENJA: HORROR VISUAL & ANIMATION SYSTEM
 **Developer:** Wanz  
-**Versi:** 1.2.0  
+**Versi:** 1.2.1  
 **Bahasa:** Penuh Bahasa Indonesia (*Full Indonesian*)  
 **Arsip Paket:** `kelir-senja-horror-visual.zip`  
 **Repositori GitHub:** [panel-bot-vip/kelir-senja-horror-visual](https://github.com/panel-bot-vip/kelir-senja-horror-visual)
@@ -18,45 +18,35 @@ Selain memandu prompt AI, kit ini dilengkapi dengan **Engine Render Prosedural I
 
 ## 2. 🎙️ PROMPT MASTER PEMBUAT NASKAH VOICEOVER (SIAP SALIN)
 
-> **💡 Klik tombol salin (copy) pada pojok kanan atas kotak kode di bawah ini untuk langsung menggunakannya di AI:**
+> **💡 Klik tombol salin (copy) pada pojok kanan atas kotak kode di bawah ini. Hasil dari prompt ini HANYA teks narasi voiceover murni tanpa nomor, tanpa scene, dan tanpa subtitle—sehingga langsung siap Anda rekam ke mikrofon!**
 
 ```markdown
-Kamu adalah seorang Penulis Naskah Voiceover Horor Spesialis Folklor Nusantara dan Sutradara Narasi Mistis bergaya "Kelir Senja".
+Kamu adalah seorang Penulis Naskah Voiceover Horor Folklor Nusantara bergaya "Kelir Senja".
 
-Tugasmu adalah menulis naskah voiceover cerita horor lokal berdurasi [PILIH DURASI: 30 detik / 45 detik / 60 detik] yang sangat dingin, mencekam, bertempo lambat, dan diakhiri pelintiran cerita (twist) yang mengejutkan di kalimat penutup.
+Tugasmu: Tulis naskah voiceover cerita horor lokal yang sangat dingin, mencekam, bertempo lambat, dan diakhiri pelintiran cerita (twist) yang mengejutkan di kalimat penutup.
 
-### ATURAN PENULISAN NASKAH:
-1. Kecepatan Kata (Tempo Horor): Rata-rata 2.5 kata per detik (sekitar 75-80 kata untuk 30 detik, 110-120 kata untuk 45 detik, 150-160 kata untuk 60 detik). Jangan terlalu panjang agar narator membacanya dengan tenang, lambat, dan bertekanan batin.
-2. Formula 5 Tahap:
-   - Detik 0-4 (Hook Pembuka): Mulai langsung dengan larangan adat, mitos pedesaan, atau fakta mistis tanpa basa-basi.
-   - Detik 5-12 (Suasana & Latar): Deskripsikan bilik bambu, lampu minyak teplok, hembusan angin malam, kabut, atau kesunyian desa.
-   - Detik 13-22 (Eskalasi Gangguan): Muncul ketukan ganjil, bayangan yang memanjang di dinding gedhek, derit bambu, atau suara lirih.
-   - Detik 23-35 (Klimaks Penampakan): Subjek menyadari ada kehadiran entitas gaib di dekatnya.
-   - Detik Terakhir (Twist Dingin): Satu kalimat penutup yang membalikkan kenyataan dan langsung membuat bulu kuduk berdiri.
-3. Diksi & Unsur Lokal: Gunakan istilah lokal yang otentik (misalnya: gedhek, lampu ublik/templok, bale bambu, kain mori, sangkala, kendi, dupa/kemenyan, petromaks).
-4. Petunjuk Akting Suara: Berikan tanda instruksi vokal di dalam tanda kurung siku seperti [nada rendah dingin], [jeda hening 1 detik], [berbisik lirih], [napas tertahan].
-
-### FORMAT OUTPUT YANG HARUS KAMU BUAT:
-
-1. JUDUL CERITA: [Nama cerita pendek & rasa horor lokal]
-2. DURASI ESTIMASI & JUMLAH KATA: [Contoh: 35 Detik / 85 Kata]
-3. NASKAH REKAMAN VOICEOVER (Lengkap dengan Petunjuk Narator):
-   (Tulis naskah lengkap di sini dengan tanda petunjuk intonasi dan jeda)
-
-4. PEMBAGIAN TIME-CODE & SUBTITLE PER ADEGAN (Siap Dirender ke MP4):
-   - Scene 1 (00:00 - 00:04):
-     - Teks VO: "..."
-     - Subtitle di Layar: "..."
-     - Arahan Visual: [Siluet karakter & cahaya lampu templok]
-   - Scene 2 (00:04 - 00:08):
-     - Teks VO: "..."
-     - Subtitle di Layar: "..."
-     - Arahan Visual: [...]
-   (Lanjutkan sampai adegan selesai)
+### ATURAN UTAMA OUTPUT (WAJIB DIPATUHI):
+1. HANYA berikan teks voiceover murni yang siap langsung dibaca/direkam ke mikrofon.
+2. DILARANG menyertakan nomor, adegan, bagian (Scene 1, Scene 2, dll).
+3. DILARANG menyertakan teks subtitle, timecode, petunjuk teknis, atau catatan pengantar/penutup.
+4. Gunakan bahasa Indonesia naratif dengan diksi folklor lokal (seperti lampu ublik, gedhek, bale bambu, kain mori, sangkala).
+5. Struktur narasi: Hook pembuka larangan adat -> suasana malam bilik bambu -> eskalasi gangguan gaib -> twist penutup yang dingin.
+6. Panjang naskah: sekitar 60 - 80 kata (durasi baca hening sekitar 20 - 30 detik).
 
 ---
-Topik Cerita yang Ingin Dibuat:
-"[Ketik topik cerita di sini, misal: Mitos meniup lampu ublik / Ketukan di dinding gedhek tengah malam / Sumur tua angker / Perjanjian pesugihan]"
+Pilih 1 dari 10 ide cerita horor folklor Nusantara berikut (atau gunakan topik yang diberikan user):
+1. Pantangan meniup lampu ublik sebelum fajar.
+2. Ketukan tiga kali di celah anyaman gedhek.
+3. Beban berat di tali timba sumur tua.
+4. Mangkuk sesaji di bawah pohon beringin.
+5. Derit bale bambu kosong di tengah malam.
+6. Selendang merah di rumpun bambu petung.
+7. Iring-iringan keranda tanpa jejak kaki.
+8. Bau kemenyan di lumbung padi kuno.
+9. Suara tangis dari kolong rumah panggung.
+10. Jenazah yang matanya menolak terpejam.
+
+Sekarang, langsung tuliskan TEKS VOICEOVER-NYA SAJA:
 ```
 
 ---
@@ -67,7 +57,7 @@ Topik Cerita yang Ingin Dibuat:
 Ketika skill ini digunakan pertama kali, Claude akan langsung menanyakan dua hal wajib:
 1. **Status Naskah / Voiceover:**
    - **Opsi 1 (Sudah punya Voiceover):** Pengguna mengirimkan file audio voiceover (`.mp3`/`.wav`/dll). Claude langsung memproses durasi, menggambar frame animasi, mencampurkan audio, membakar subtitle, dan mengirimkan file video MP4 jadinya!
-   - **Opsi 2 (Belum punya naskah):** Claude langsung menyajikan **10 Ide Cerita Horor Folklor Lokal** yang mencekam, meminta pengguna memilih 1 ide, lalu menyusunkan naskah voiceover lengkapnya untuk direkam/dikirimkan.
+   - **Opsi 2 (Belum punya naskah):** Claude langsung menyajikan **10 Ide Cerita Horor Folklor Lokal** yang mencekam, meminta pengguna memilih 1 ide, lalu menyusunkan teks voiceover murni untuk direkam/dikirimkan.
 2. **Pilihan Rasio Visual:**
    - **9:16 (Vertikal):** Untuk TikTok, Instagram Reels, dan YouTube Shorts.
    - **16:9 (Horizontal):** Untuk YouTube Widescreen dan tampilan sinematik lanskap.
@@ -77,8 +67,8 @@ Ketika skill ini digunakan pertama kali, Claude akan langsung menanyakan dua hal
 - Setiap bagian menyertakan **Kartu Checkpoint** di akhir pesan. Jika sesi Claude terputus atau batas limit pesan tercapai, pengguna cukup menyalin kartu checkpoint tersebut ke obrolan baru dan mengetik `"Lanjutkan ke Bagian X"` untuk meneruskan tepat dari adegan berikutnya tanpa mengulang.
 
 ### 📝 C. Integrasi Subtitle Lengkap
-- Setiap adegan dilengkapi teks subtitle, estimasi timecode detik-ke-detik, penataan tipografi (warna pendar gading/amber), serta zona aman (*safe zone*) agar tidak tertutup antarmuka media sosial.
-- Di akhir bagian tamat, disediakan kompilasi naskah berformat file `.srt` siap pakai untuk CapCut, Adobe Premiere, atau VN Editor.
+- Di dalam video hasil render MP4, subtitle secara otomatis dibakar di area aman (*safe zone*) agar tidak tertutup antarmuka media sosial.
+- Di akhir bagian tamat, disediakan kompilasi naskah berformat file `.srt` siap pakai jika dibutuhkan untuk editing lanjutan.
 
 ### 🎥 D. Render Langsung ke MP4 (CLI Video Generation)
 - Menggunakan `engine/render.py` untuk menggambar frame animasi bergaya siluet gelap, efek api lentera berkedip (*flickering flame*), bayangan dinding gedhek, kabut tanah, dan subtitle yang menempel rapi.
@@ -113,7 +103,7 @@ kelir-senja-horror-visual/
 │   ├── 01_alur_interaksi_awal.md            # Dialog pohon keputusan intake naskah & resolusi
 │   └── 02_sistem_chunking_dan_checkpoint.md # Mekanisme pemecahan bagian dan pemulihan batas kuota
 ├── templates/                               # Lembar kerja siap pakai
-│   ├── prompt_pembuat_naskah_voiceover.md   # Master prompt generator naskah VO
+│   ├── prompt_pembuat_naskah_voiceover.md   # Master prompt generator naskah VO murni
 │   ├── template_rekap_adegan.md             # Format standar lembar kerja per adegan
 │   ├── template_checkpoint_recovery.md      # Format kartu pemulihan sesi antar-chat
 │   └── template_prompt_ai_generator.md      # Bank kata kunci dan formula prompt baku
