@@ -1,7 +1,7 @@
 """
-Kelir Senja - Horror Soundscape & Audio Synthesizer
+Kelir Senja - Horror Soundscape & User Voiceover Mixer
 Developer: Wanz
-Menghasilkan atmosfer suara horor malam Nusantara (drone mistis, desis sumbu api, jangkrik malam, detak jantung).
+Mencampur voiceover asli kiriman pengguna dengan soundscape horor Nusantara (sub-bass drone, desir angin, jangkrik, detak jantung).
 """
 
 import numpy as np
@@ -10,6 +10,17 @@ import struct
 import math
 import subprocess
 import os
+
+def get_audio_duration(audio_file):
+    """Ambil durasi audio voiceover kiriman pengguna dalam detik."""
+    cmd = [
+        "ffprobe", "-v", "error",
+        "-show_entries", "format=duration",
+        "-of", "default=noprint_wrappers=1:nokey=1",
+        audio_file
+    ]
+    res = subprocess.run(cmd, stdout=subprocess.PIPE, text=True, check=True)
+    return float(res.stdout.strip())
 
 def generate_horror_soundscape(output_wav_path, duration_seconds=10.0, sample_rate=48000):
     total_samples = int(duration_seconds * sample_rate)
@@ -25,19 +36,17 @@ def generate_horror_soundscape(output_wav_path, duration_seconds=10.0, sample_ra
     
     # 2. Desir angin malam basah (filtered noise)
     noise = np.random.uniform(-1.0, 1.0, total_samples)
-    # Moving average filter untuk membuat desir angin lembut
     window = 120
     wind = np.convolve(noise, np.ones(window)/window, mode='same') * 0.35
     wind *= (0.5 + 0.5 * np.sin(2 * np.pi * 0.22 * t))
     
     # 3. Suara jangkrik malam (crickets)
-    crickets = np.zeros(total_samples)
     carrier = np.sin(2 * np.pi * 4500.0 * t)
     burst_mod = (np.sin(2 * np.pi * 18.0 * t) > 0.3).astype(float)
     slow_env = 0.5 * (1.0 + np.sin(2 * np.pi * 0.4 * t))
     crickets = 0.06 * carrier * burst_mod * slow_env
     
-    # 4. Detak jantung perlahan (heartbeat thud) setiap 1.2 detik
+    # 4. Detak jantung perlahan (heartbeat thud) setiap 1.25 detik
     heartbeat = np.zeros(total_samples)
     hb_period = 1.25
     for i in range(int(duration_seconds / hb_period)):
@@ -84,15 +93,17 @@ def generate_horror_soundscape(output_wav_path, duration_seconds=10.0, sample_ra
     return output_wav_path
 
 def mix_audio_with_voiceover(vo_path, horror_bed_path, output_path):
-    """Campur audio voiceover dengan musik/SFX di 50% (-6dB)."""
+    """Campurkan file audio voiceover kiriman user dengan soundscape horor."""
     cmd = [
         "ffmpeg", "-y", "-v", "error",
         "-i", vo_path,
         "-i", horror_bed_path,
         "-filter_complex",
-        "[1:a]volume=0.45[bed];[0:a][bed]amix=inputs=2:duration=first:dropout_transition=2[out]",
+        "[0:a]aformat=channel_layouts=stereo:sample_rates=48000,volume=1.0[vo];"
+        "[1:a]aformat=channel_layouts=stereo:sample_rates=48000,volume=0.38[bed];"
+        "[vo][bed]amix=inputs=2:duration=first:dropout_transition=2[out]",
         "-map", "[out]",
-        "-ar", "48000", "-c:a", "aac", "-b:a", "192k",
+        "-ar", "48000", "-c:a", "pcm_s16le",
         output_path
     ]
     subprocess.run(cmd, check=True)
